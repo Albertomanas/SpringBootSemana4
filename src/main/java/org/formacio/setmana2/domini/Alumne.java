@@ -30,7 +30,7 @@ public class Alumne {
 	}
 	/**
 	 * procedimiento: Click derecho - Source - Generate HashCode and Equals.
-	 * Se hace solo con la propiedad alumno dado a que es un requisito del test.
+	 * Se hace solo con la propiedad nombre, dado a que es lo que pide el test.
 	 */
 	@Override
 	public int hashCode() {
@@ -43,9 +43,7 @@ public class Alumne {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
+		if (!(obj instanceof Alumne))
 			return false;
 		Alumne other = (Alumne) obj;
 		if (nom == null) {
@@ -55,5 +53,6 @@ public class Alumne {
 			return false;
 		return true;
 	}
+
 	
 }
