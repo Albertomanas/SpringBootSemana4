@@ -28,5 +28,32 @@ public class Alumne {
 	public void setEdat(int edat) {
 		this.edat = edat;
 	}
+	/**
+	 * procedimiento: Click derecho - Source - Generate HashCode and Equals.
+	 * Se hace solo con la propiedad alumno dado a que es un requisito del test.
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((nom == null) ? 0 : nom.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Alumne other = (Alumne) obj;
+		if (nom == null) {
+			if (other.nom != null)
+				return false;
+		} else if (!nom.equals(other.nom))
+			return false;
+		return true;
+	}
 	
 }
